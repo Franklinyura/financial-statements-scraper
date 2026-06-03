@@ -8,8 +8,10 @@ from urllib3.util.retry import Retry
 from bs4 import BeautifulSoup
 from datetime import date
 from sqlalchemy import create_engine, text
-
 from ef_estados_financieros import entidades_ef
+from dotenv import load_dotenv
+
+load_dotenv()
 
 HEADERS = {
     "User-Agent": (
@@ -19,16 +21,16 @@ HEADERS = {
     )
 }
 
-TARGET_TABLE  = os.getenv("DB_TABLE",  "estados_financieros")
-TARGET_SCHEMA = os.getenv("DB_SCHEMA", None)  
+TARGET_TABLE  = os.getenv("DB_TABLE")
+TARGET_SCHEMA = os.getenv("DB_SCHEMA")  
 
 def build_engine():
-    dialect  = os.getenv("DB_DIALECT",  "postgresql+psycopg2")
-    user     = os.getenv("DB_USER",     "")
-    password = os.getenv("DB_PASSWORD", "")
-    host     = os.getenv("DB_HOST",     "localhost")
-    port     = os.getenv("DB_PORT",     "5432")
-    name     = os.getenv("DB_NAME",     "")
+    dialect  = os.getenv("DB_DIALECT")
+    user     = os.getenv("DB_USER")
+    password = os.getenv("DB_PASSWORD")
+    host     = os.getenv("DB_HOST")
+    port     = os.getenv("DB_PORT")
+    name     = os.getenv("DB_NAME")
 
     url = f"{dialect}://{user}:{password}@{host}:{port}/{name}"
     return create_engine(url, echo=False)
@@ -186,7 +188,7 @@ def main():
     df = ejecutar_scraping(entidades_ef, session)
 
     if df.empty:
-        print("[AVISO] DataFrame vacío, no se insertó nada.")
+        print("[AVISO] DataFrame vacio, no se insertó nada.")
         return
 
     df["ANO"] = df.apply(extraer_ano, axis=1)
