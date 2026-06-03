@@ -26,27 +26,6 @@ Built as part of data engineering work in the financial regulatory sector (Domin
 └── README.md
 ```
 
-> `ef_estados_financieros.py` contains the entity dictionary with URLs and keyword configs. It is excluded from this repo as it contains internal configuration.
-
----
-
-## ⚙️ Configuration
-
-All credentials and settings are loaded from environment variables. Copy `.env.example` to `.env` and fill in your values — **never commit `.env` to git**.
-
-```env
-DB_DIALECT=postgresql+psycopg2 
-DB_USER=your_user
-DB_PASSWORD=your_password
-DB_HOST=localhost
-DB_PORT=5432
-DB_NAME=your_database
-DB_TABLE=estados_financieros
-
-```
-
----
-
 ## 📦 Requirements
 
 ```
