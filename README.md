@@ -20,8 +20,7 @@ Built as part of data engineering work in the financial regulatory sector (Domin
 
 ```
 ├── scraper.py                   # Main pipeline
-├── ef_estados_financieros.py    # Entity config (not included — see below)
-├── .env.example                 # Environment variable template
+├── ef_estados_financieros.py    # Entity config (not included)
 ├── requirements.txt
 └── README.md
 ```
