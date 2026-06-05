@@ -1,4 +1,4 @@
-# 📊 Financial Statements Web Scraper
+# Financial Statements Web Scraper
 
 Automated pipeline that scrapes financial statements published on the websites of regulated entities and loads the results directly into a relational database.
 
@@ -6,7 +6,7 @@ Built as part of data engineering work in the financial regulatory sector (Domin
 
 ---
 
-## 🔧 What it does
+## What it does
 
 1. Iterates over a list of regulated entities (banks, insurance companies, etc.)
 2. Fetches each entity's public webpage and parses the HTML
@@ -16,7 +16,7 @@ Built as part of data engineering work in the financial regulatory sector (Domin
 
 ---
 
-## 🗂 Project structure
+## Project structure
 
 ```
 ├── scraper.py                   # Main pipeline
@@ -25,7 +25,7 @@ Built as part of data engineering work in the financial regulatory sector (Domin
 └── README.md
 ```
 
-## 📦 Requirements
+## Requirements
 
 ```
 requests
@@ -43,7 +43,7 @@ python-dotenv
 
 ---
 
-## 🧠 Tech stack
+## Tech stack
 
 `Python` · `BeautifulSoup4` · `Pandas` · `SQLAlchemy` · `Requests` · `Regex`
 
